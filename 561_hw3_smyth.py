@@ -1,6 +1,6 @@
 #  561_hw3_smyth.py
 #  Smyth, Ravela
-#  CS561 HW3 "Standard Deviation"
+#  CS561 HW3 "Standard Deviation"  
 
 import math
 
