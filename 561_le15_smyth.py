@@ -129,3 +129,47 @@ def main():
 	output('data.txt', ['red', 'green', 'blue'])
 
 main()
+
+
+
+class Point: 
+	def __init__(self, x, y):
+		self.x = float(x)
+		self.y = float(y)
+	def show(self):
+		print(self)
+	def __str__(self):
+		return ('('+str(self.x)+', '+str(self.y)+')')
+	def distance(self, other):
+		dx = self.x - other.x
+		dy = self.y - other.y
+		return math.sqrt(dx**2 + dy**2)
+	def midpoint(self, other):
+		return Point((self.x+other.x)/2, (self.y+other.y)/2)
+
+	# li is a list of points
+
+def perimeter(li):
+	per = 0;
+	for i in range(1,len(li)):
+		per+= li[i].distance(li[i-1])
+	per+=li[0].distance(li[len(li)-1])
+	return per
+
+a = Point(2, 3)
+b = Point(4, 5)
+print(a.x, b.y)
+li = []
+
+for n in range(1, 1000001):
+	li.append(Point(float(n), float(n)))
+
+print(len(li))
+li[587926].show()
+print(li[587926])
+print(a.distance(b))
+print(a.midpoint(b))
+
+li = [Point(0,0), Point(1,0), Point(2,1), Point(1,2), Point(0,1)]
+
+print(perimeter(li))
